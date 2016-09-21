@@ -69,7 +69,11 @@ function randomize() {
 
 var offset;
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  if (windowHeight == 0) {
+    createCanvas(windowWidth, 900);
+  } else {
+    createCanvas(windowWidth, windowHeight);
+  }
   var maxSize = width > height?width:height;
   w = new World(maxSize / 40, maxSize, 15, 0.28);
   noFill();
